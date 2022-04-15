@@ -1,0 +1,13 @@
+FUNCTION(sample_test file_name)
+    add_executable(       ${file_name}     ${file_name}.cpp)
+    target_link_libraries(${file_name}     pthread)
+endfunction(sample_test)
+
+sample_test(test1)
+sample_test(test2)
+sample_test(test3)
+sample_test(test4)
+sample_test(test5)
+sample_test(test6)
+sample_test(test7)
+sample_test(my_jthread)
