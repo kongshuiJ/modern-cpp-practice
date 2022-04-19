@@ -3,6 +3,8 @@ FUNCTION(sample_test file_name)
     target_link_libraries(${file_name}     pthread)
 endfunction(sample_test)
 
+add_subdirectory(reactor_model)
+
 sample_test(server)
 sample_test(client)
 
@@ -24,5 +26,5 @@ sample_test(nonblocking_client)
 sample_test(blocking_client_recv)
 sample_test(nonblocking_client_recv)
 
-add_executable(       main     main.cpp myreactor.cpp)
-target_link_libraries(main     pthread)
+add_executable(       reactor_server    reactor_server.cpp myreactor.cpp)
+target_link_libraries(reactor_server    pthread)

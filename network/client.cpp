@@ -9,8 +9,8 @@
 #include <iostream>
 #include <string.h>
 
-#define SERVER_ADDRESS "127.0.0.1"
-#define SERVER_PORT     3000
+#define SERVER_ADDRESS  "127.0.0.1"
+#define SERVER_PORT     3333
 #define SEND_DATA       "helloworld"
 
 int main(int argc, char *argv[])
@@ -48,16 +48,12 @@ int main(int argc, char *argv[])
     char recvBuf[32] = {0};
     ret = recv(clientfd, recvBuf, 32, 0);
     if (ret > 0)
-    {
         std::cout << "recv data successfully, data: " << recvBuf << std::endl;
-    } else
-    {
+    else
         std::cout << "recv data error, data: " << recvBuf << std::endl;
-    }
 
     //5. 关闭socket
-    //close(clientfd);
-    //这里仅仅是为了让客户端程序不退出
+    // close(fd)
     while (true)
     {
         sleep(3);
